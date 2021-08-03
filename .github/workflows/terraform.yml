@@ -48,8 +48,10 @@ on:
   push:
     branches:
     - main
-  pull_request:
-
+    - dev
+    - release/*
+  schedule: #every day of the week from Monday to Friday at 2:00 UTC
+    - cron: "0 2 * * 1-5"
 jobs:
   terraform:
     name: 'Terraform'
